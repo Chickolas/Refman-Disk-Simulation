@@ -1,0 +1,10 @@
+# Configuration folder
+confs/
+
+#Build  outputs - executables, object files
+*.exe
+*.o
+
+#MacOS files
+.DS_Store
+__MACOSX/
