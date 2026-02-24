@@ -1,9 +1,10 @@
-# Configuration folder
+#Configuration folder
 confs/
 
 #Build  outputs - executables, object files
 *.exe
 *.o
+prog
 
 #MacOS files
 .DS_Store
