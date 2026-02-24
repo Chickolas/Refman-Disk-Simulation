@@ -11,7 +11,7 @@
  */
 
 static void usage(const char* prog) {
-    std::cout << "Command Usage: " << prog <<" NumberOfDisks maxDisplacement Radius BoxSize \n";
+    std::cout << "Command Usage: \n" << prog <<" NumberOfDisks maxDisplacement Radius BoxSize\n";
 }
 
  // Added CLI's
