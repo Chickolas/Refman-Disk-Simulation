@@ -1,3 +1,6 @@
+#ifndef SYSTEM_H
+#define SYSTEM_H
+
 #include <string>
 #include <iostream>
 #include <vector>
@@ -20,3 +23,5 @@ public:
     void enforceBoundaries(Disk & disk);
     double uniform(double min, double max);
 };
+
+#endif

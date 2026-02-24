@@ -1,3 +1,6 @@
+#ifndef DISK_H
+#define DISK_H
+
 class Disk {
 public:
     double x, y, radius;
@@ -6,3 +9,5 @@ public:
     void move(double dx, double dy);
     double distance(Disk& d);
 };
+
+#endif
