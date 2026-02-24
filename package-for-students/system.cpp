@@ -19,6 +19,7 @@ System::System(int N, double displacement,double radius, double boxSize, int see
         }
     }   
 
+
 bool System::overlap(int i){
     for (int j = 0; j < disks.size(); ++j) {
         if (i!=j && disks[i].distance(disks[j]) < (disks[i].radius + disks[j].radius) ) {
@@ -47,15 +48,18 @@ void System::step() {
        
     }
 }
+
+// Make disks stay within the box
 void System::enforceBoundaries(Disk & disk) {
-        if (disk.x < 0) disk.x = 0;
-        if (disk.x > boxSize) disk.x = boxSize;
-        if (disk.y < disk.radius) disk.y = 0;
-        if (disk.y > boxSize) disk.y = boxSize;
-    }
+    if (disk.x < disk.radius) disk.x = disk.radius;
+    if (disk.x > boxSize - disk.radius) disk.x = boxSize - disk.radius;
+    if (disk.y < disk.radius) disk.y = disk.radius;
+    if (disk.y > boxSize - disk.radius) disk.y = boxSize - disk.radius;
+}
 
 // HINT: PROVIDE A DEFINITION FOR A MEMBER FUNCTION OF THE SYSTEM CLASS CALLED uniform
 
+// Returns  random distance between the min and max value 
 double System::uniform(double min, double max) {
     return min + dist(gen) * (max - min);
 }
