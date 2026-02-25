@@ -5,13 +5,22 @@ import glob
 from matplotlib.patches import Circle
 
 # Get all configurations from the confs folder
-files = glob.glob("confs\c*")
+files = glob.glob("confs/c*")
+
+# Check if the file exists
+if not files:
+    raise FileNotFoundError("No files matched confs/c*")
+
 # sort them in ascending order
-filenames = sorted(files, key=lambda x: int(x.split("\conf")[1]))
+# sorting wasn't working for my device - had to chane it to \\conf from /conf
+filenames = sorted(files, key=lambda x: int(x.split("\\conf")[1]))
 
 # Create a new figure
 fig, ax = plt.subplots()
 ax.set(xlim=(0, 20), ylim=(0, 20), aspect='equal')
+
+ax.set_xlabel("x")
+ax.set_ylabel("y")
 
 # List to hold the circle patches (assume number of circles remains constant)
 circles = []
